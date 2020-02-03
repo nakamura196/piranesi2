@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer v-model="drawer" :temporary="true" app overflow>
       <v-list>
         <v-list-item :to="{ path: '/' }" link>
@@ -10,6 +10,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <!-- 
         <v-list-item :to="{ path: '/help' }" link>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
@@ -84,6 +85,7 @@
             <v-list-item-title>データの利用を希望される方へ</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        -->
         <v-list-item :to="{ path: '/about' }" link>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
@@ -97,16 +99,22 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>{{ $t('message.title') }}</v-toolbar-title>
+      <v-toolbar-title><!-- {{ $t('message.title') }}--></v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-btn @click="changeLocale" text>{{
+      <!-- 
+      <v-btn @click="changeLocale" text>
+        {{
         $t('message.change_locale')
-      }}</v-btn>
+        }}
+      </v-btn>
+      -->
     </v-app-bar>
 
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
+    <v-footer :dark="true">
+      <p class="text-center my-5">
+        <!-- {{$t("message.project")}}（{{$t("message.library")}}） -->
+        <br />digital-archive [at] lib.u-tokyo.ac.jp
+      </p>
     </v-footer>
   </v-app>
 </template>
@@ -115,25 +123,8 @@
 export default {
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      fixed: false
     }
   }
 }
