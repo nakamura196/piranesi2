@@ -7,7 +7,7 @@
     <v-footer :dark="true">
       <v-container>
         <p class="text-center my-5">
-          <!-- {{$t("message.project")}}（{{$t("message.library")}}） -->
+          {{ $t('message.project') }}（{{ $t('message.library') }})
           <br />digital-archive [at] lib.u-tokyo.ac.jp
         </p>
       </v-container>

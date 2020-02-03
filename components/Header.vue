@@ -2,7 +2,7 @@
   <div>
     <v-navigation-drawer v-model="drawer" :temporary="true" app overflow>
       <v-list>
-        <v-list-item :to="{ path: '/' }" link>
+        <v-list-item :to="localePath('index')" link>
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -10,8 +10,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <!-- 
-        <v-list-item :to="{ path: '/help' }" link>
+        <v-list-item :to="localePath('help')" link>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
@@ -85,7 +84,6 @@
             <v-list-item-title>データの利用を希望される方へ</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        -->
         <v-list-item :to="{ path: '/about' }" link>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
@@ -99,15 +97,14 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title><!-- {{ $t('message.title') }}--></v-toolbar-title>
+      <v-toolbar-title>{{ $t('message.title') }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- 
-      <v-btn @click="changeLocale" text>
-        {{
-        $t('message.change_locale')
-        }}
+      <v-btn :to="switchLocalePath('en')" text>
+        English
       </v-btn>
-      -->
+      <v-btn :to="switchLocalePath('ja')" text>
+        日本語
+      </v-btn>
     </v-app-bar>
 
     <br />
