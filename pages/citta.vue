@@ -21,7 +21,7 @@
             <v-col cols="9">
               <router-link
                 :to="{
-                  path: '/detail_cdml_j',
+                  path: '/detail_cdml',
                   query: { file_no: obj.file_no }
                 }"
               >

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-container>
-      <h2 class="my-5">Views, Remains, Architectures in {{ title }}</h2>
-
+    <v-container v-if="$i18n.locale == 'ja'">
       <h4>データベースの使い方</h4>
       <p style="margin-left: 15px; margin-right: 15px;">
         各画像のサムネールから，基本作品情報，詳細作品情報をご覧頂けます。
@@ -81,6 +79,119 @@
           コンテンツ一覧
         </a>
         <br />ピラネージ版画データベース全体のサイトマップです。
+      </p>
+    </v-container>
+    <v-container v-else>
+      <img
+        src="images/w.gif"
+        hspace="0"
+        vspace="0"
+        border="0"
+        height="14"
+        width="100"
+      /><br />
+
+      <h4>Using this database</h4>
+      <p style="margin-left: 15px; margin-right: 15px;">
+        Each image, as well as information on the collection of 1440 prints
+        created by Piranesi and other artists, can be accessed in the following
+        ways.
+      </p>
+      <p style="margin-left: 15px; margin-right: 15px;">
+        <a href="e_find0606.html">Search</a><br />
+        <b><a href="e_find0606.html">Simple Search</a>:</b> All works can be
+        searched by keyword in Italian and Japanese.
+        <span class="stxt"
+          >(Please enter "*" as a European accent character.)</span
+        ><br />
+        <br />
+        <b><a href="e_find0606.html">Advanced Search</a>:</b> All works can be
+        searched in any field as follows:
+        <span class="stxt"
+          >(Please enter "*" as a European accent character.)</span
+        >
+      </p>
+      <ul>
+        <li>
+          Title of works in Japanese, Italian (by
+          <i><a href="e_hanrei.html#vol">Calcografia Nazionale</a></i
+          >), or English (by
+          <i><a href="e_hanrei.html#raisone">J. Wilton Ely</a></i
+          >)
+        </li>
+        <li>Author (in his native language)</li>
+        <li>Volume, plate,or number of the image</li>
+        <li>
+          Complete catalogue number (<i
+            ><a href="e_hanrei.html#vol">Calcografia</a>,
+            <a href="e_hanrei.html#raisone">J. Wilton-Ely,</a>
+            <a href="e_hanrei.html#raisone">H. Focillon</a>,
+            <a href="e_hanrei.html#raisone">Taschen</a></i
+          >)
+        </li>
+        <li>
+          Exhibition catalogue number (as held in Japan:
+          <a href="e_hanrei.html#catalog"
+            >The Museum of Modern Art, Kamakura in 1977</a
+          >;
+          <a href="e_hanrei.html#catalog"
+            >Machida City Museum of Graphic Arts in 1989</a
+          >)
+        </li>
+      </ul>
+      <p></p>
+
+      <p style="margin-left: 15px; margin-right: 15px;">
+        <a href="e_index_01.html">Volume Index</a><br />The 1440 works that
+        consist of a total of 29 volumes can be browsed by volume, and by page
+        number.
+      </p>
+      <p style="margin-left: 15px; margin-right: 15px;">
+        <a
+          href="FMPro@-db=sougouwebcp.fp5&amp;-format=e_mapsearch.html&amp;-FindAll.html"
+          >Rome Map</a
+        ><br />
+        Prints by Giovanni Battista Piranesi and Francesco Piranesi can be
+        searched according to the location of Roman remains depicted in the
+        work. Sites of ruins depicted by Piranesi are indicated on a
+        superimposition of an ancient Roman map onto a modern one. This allows
+        Piranesi's perspective to be viewed simultaneously with photographs of
+        the present, from the same angle.<br />
+        <br /><a href="e_subject.html"><b>Subject Search</b></a
+        ><br />
+        Prints by Giovanni Battista Piranesi and Francesco Piranesi can be
+        searched from the index according to the category of subjects.
+      </p>
+
+      <p style="margin-left: 15px; margin-right: 15px;">
+        <a
+          href="FMPro@-db=sougouwebcp.fp5&amp;-format=%252Fe_concordance.html&amp;-Max=103&amp;-FindAll.html"
+          >Concordance</a
+        ><br />
+        The concordance list between the number of images on this database and
+        the number of the seven catalogues.
+      </p>
+      <h4>Information on the works</h4>
+      <p style="margin-left: 15px; margin-right: 15px;">
+        <a
+          href="FMPro@-db=sougouwebcp.fp5&amp;-op=eq&amp;volume=1&amp;-token.0=25&amp;-find=&amp;-format=%252Fdetail_cdml_e.html&amp;-max=1.html"
+          ><b>Basic information</b></a
+        ><br />
+        Clicking on a thumbnail brings up an enlarged image and basic
+        information on the work. The title of the work, author, size of the
+        print and the <i>Kamei Collection</i> number are available. <br />
+        <br />
+        <a
+          href="FMPro@-db=sougouwebcp.fp5&amp;-token.0=25&amp;-find=&amp;-format=%252Ftext_cdml_e.html&amp;-max=1&amp;file_no=1001&amp;-find=.html"
+          ><b>Detailed information</b></a
+        ><br />
+        Clicking on the image on the basic information page will bring up a
+        further magnified image, the length of which is 1,500 pixels. Other
+        links are also available on the page leading to various catalogue
+        numbers, numbers of bibliographical references of existing historical
+        Latin inscriptions that are depicted, original textual captions etched
+        onto the plate, modern photographs taken from angles identical to
+        Piranesi's, and other photographs from different angles.
       </p>
     </v-container>
   </div>

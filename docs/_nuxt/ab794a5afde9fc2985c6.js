@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{184:function(e){e.exports=JSON.parse('{"message":{"title":"ピラネージ画像データベース Opere di Giovanni Battista Piranesi","about":"このサイトについて","hogehoge":"ほげほげ","help":"使い方","change_locale":"English","project":"東京大学学術資産アーカイブ化推進室","library":"東京大学附属図書館総務課","about_the_kamei_collection":"亀井文庫 ピラネージ版画集について"}}')}}]);
