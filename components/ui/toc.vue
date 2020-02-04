@@ -29,7 +29,7 @@ export default {
     select() {
       this.$router.push(
         this.localePath({
-          path: '/catalog_cdml',
+          path: '/volume',
           query: { volume: this.index }
         })
       )

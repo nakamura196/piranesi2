@@ -19,16 +19,20 @@
 
     <template v-if="toggle_exclusive === 1">
       <v-row>
-        <v-col v-for="(obj, key) in result" :key="key" cols="3">
+        <v-col v-for="(obj, key) in result" :key="key" :cols="6" :md="3">
           <v-card
             :to="
               localePath({
-                path: '/detail_cdml',
+                path: '/item',
                 query: { file_no: obj.file_no }
               })
             "
           >
-            <v-img :contain="true" :src="obj.thumbnail" height="200px"></v-img>
+            <v-img
+              :contain="true"
+              :src="obj.thumbnail"
+              max-height="200px"
+            ></v-img>
 
             <v-card-text>
               <template v-if="$i18n.locale == 'ja'">
@@ -52,7 +56,7 @@
         :key="key"
         :to="
           localePath({
-            path: '/detail_cdml',
+            path: '/item',
             query: { file_no: obj.file_no }
           })
         "
@@ -60,7 +64,7 @@
       >
         <v-card-text>
           <v-row>
-            <v-col cols="2">
+            <v-col :cols="12" :md="3">
               <v-img
                 :contain="true"
                 :src="obj.thumbnail"
@@ -68,7 +72,7 @@
                 max-height="200px"
               ></v-img>
             </v-col>
-            <v-col cols="9">
+            <v-col :cols="12" :md="9">
               <small>{{ key + 1 }}</small
               ><br />
               <template v-if="$i18n.locale == 'ja'">

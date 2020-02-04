@@ -10,7 +10,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to="localePath({ path: '/catalog_index' })" link>
+        <v-list-item :to="localePath({ path: '/volumes' })" link>
           <v-list-item-action>
             <v-icon>mdi-view-list</v-icon>
           </v-list-item-action>
