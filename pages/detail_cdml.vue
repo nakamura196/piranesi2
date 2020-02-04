@@ -1,30 +1,37 @@
 <template>
   <div>
     <v-container>
-      <v-breadcrumbs
-        :items="[
-          {
-            text: 'トップ',
-            disabled: false,
-            href: ''
-          },
-          {
-            text: '全巻目次',
-            disabled: false,
-            href: ''
-          },
-          {
-            text: data.volume + '巻目次',
-            disabled: false,
-            href: ''
-          },
-          {
-            text: data.volume + '巻' + data.plate + '葉',
-            disabled: true,
-            href: ''
-          }
-        ]"
-      ></v-breadcrumbs>
+      <v-row>
+        <v-col cols="10">
+          <v-breadcrumbs
+            :items="[
+              {
+                text: 'トップ',
+                disabled: false,
+                href: ''
+              },
+              {
+                text: '全巻目次',
+                disabled: false,
+                href: ''
+              },
+              {
+                text: data.volume + '巻目次',
+                disabled: false,
+                href: ''
+              },
+              {
+                text: data.volume + '巻' + data.plate + '葉',
+                disabled: true,
+                href: ''
+              }
+            ]"
+          ></v-breadcrumbs>
+        </v-col>
+        <v-col cols="2">
+          <toc></toc>
+        </v-col>
+      </v-row>
 
       <v-row>
         <v-col
@@ -33,9 +40,21 @@
           }})</v-col
         >
         <v-col
-          ><router-link :to="{}">{{ data.volume }}巻のindex</router-link></v-col
+          ><nuxt-link
+            :to="
+              localePath({
+                path: '/catalog_cdml',
+                query: { volume: data.volume }
+              })
+            "
+          >
+            <template v-if="$i18n.locale === 'ja'">
+              {{ data.volume }}巻のindex
+            </template>
+            <template v-else> Index of vol.{{ data.volume }} </template>
+          </nuxt-link></v-col
         >
-        <v-col></v-col>
+        <v-col> </v-col>
       </v-row>
     </v-container>
 
@@ -150,7 +169,11 @@
 
 <script>
 import axios from 'axios'
+import toc from '~/components/ui/toc.vue'
 export default {
+  components: {
+    toc
+  },
   data: () => ({
     data: {}
   }),

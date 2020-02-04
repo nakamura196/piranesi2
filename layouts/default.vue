@@ -17,6 +17,8 @@
       <v-icon>mdi-arrow-up</v-icon>
     </v-btn>
 
+    <br />
+
     <v-content>
       <nuxt />
     </v-content>

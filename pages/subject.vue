@@ -1,15 +1,13 @@
 <template>
-  <div class="mt-5">
+  <div>
     <v-container>
-      <h3>
-        Subject index of series by Giovanni Battista and Francesco Piranesi
-      </h3>
+      <h2 class="my-5">{{ $t('message.subject_search') }}</h2>
 
       <v-card class="mx-auto mt-5">
-        <v-sheet class="pa-4 primary lighten-2">
+        <v-sheet class="pa-4" color="grey">
           <v-text-field
             v-model="search"
-            label="Search Subject Directory"
+            :label="$t('message.search_subject_directory')"
             dark
             flat
             solo-inverted
@@ -17,12 +15,14 @@
             clearable
             clear-icon="mdi-close-circle-outline"
           ></v-text-field>
+          <!-- 
           <v-checkbox
             v-model="caseSensitive"
             dark
             hide-details
             label="Case sensitive search"
           ></v-checkbox>
+          -->
         </v-sheet>
         <v-card-text>
           <v-treeview :items="items" :search="search" :filter="filter" open-all>
@@ -65,7 +65,8 @@ export default {
                 children: [
                   {
                     id: 1121,
-                    name: 'Capitals'
+                    name: 'Capitals',
+                    link: true
                   }
                 ]
               },

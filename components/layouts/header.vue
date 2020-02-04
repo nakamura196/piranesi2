@@ -10,6 +10,24 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item :to="localePath({ path: '/catalog_index' })" link>
+          <v-list-item-action>
+            <v-icon>mdi-view-list</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ $t('message.browse') }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item :to="localePath({ path: '/find' })" link>
+          <v-list-item-action>
+            <v-icon>mdi-magnify</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{
+              $t('message.text_search')
+            }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item :to="localePath('help')" link>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>

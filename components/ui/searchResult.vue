@@ -5,10 +5,10 @@
       <v-col class="text-right">
         <v-btn-toggle v-model="toggle_exclusive" mandatory>
           <v-btn>
-            <v-icon>mdi-view-grid</v-icon>
+            <v-icon>mdi-view-list</v-icon>
           </v-btn>
           <v-btn>
-            <v-icon>mdi-view-list</v-icon>
+            <v-icon>mdi-view-grid</v-icon>
           </v-btn>
           <v-btn>
             <v-icon>mdi-table</v-icon>
@@ -17,14 +17,16 @@
       </v-col>
     </v-row>
 
-    <template v-if="toggle_exclusive === 0">
+    <template v-if="toggle_exclusive === 1">
       <v-row>
         <v-col v-for="(obj, key) in result" :key="key" cols="3">
           <v-card
-            :to="{
-              path: '/detail_cdml',
-              query: { file_no: obj.file_no }
-            }"
+            :to="
+              localePath({
+                path: '/detail_cdml',
+                query: { file_no: obj.file_no }
+              })
+            "
           >
             <v-img :contain="true" :src="obj.thumbnail" height="200px"></v-img>
 
@@ -44,14 +46,16 @@
       </v-row>
     </template>
 
-    <template v-else-if="toggle_exclusive === 1">
+    <template v-else-if="toggle_exclusive === 0">
       <v-card
         v-for="(obj, key) in result"
         :key="key"
-        :to="{
-          path: '/detail_cdml',
-          query: { file_no: obj.file_no }
-        }"
+        :to="
+          localePath({
+            path: '/detail_cdml',
+            query: { file_no: obj.file_no }
+          })
+        "
         class="my-5"
       >
         <v-card-text>
@@ -76,6 +80,10 @@
                 {{ obj.title_JP }}
                 <br />
                 {{ obj.title }}
+                <br />
+                <p v-if="obj.Edificio_IL" class="mt-2">
+                  <b>Edificio_IL: </b> {{ obj.Edificio_IL }}
+                </p>
               </template>
               <template v-else>
                 <small

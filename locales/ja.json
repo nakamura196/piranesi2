@@ -13,6 +13,8 @@
     "text_search": "作品検索",
     "text_search_about" : "作品名・キーワードなどから作品を検索できます。",
     "link_about" : "別サイトに遷移します。",
-    "works" : "図版"
+    "works" : "図版",
+    "subject_search" : "主題別検索",
+    "search_subject_directory" : "検索対象の主題"
   }
 }
